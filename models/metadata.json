@@ -1,0 +1,200 @@
+{
+  "neighbourhoods": [
+    "Barking and Dagenham",
+    "Barnet",
+    "Bexley",
+    "Brent",
+    "Bromley",
+    "Camden",
+    "City of London",
+    "Croydon",
+    "Ealing",
+    "Enfield",
+    "Greenwich",
+    "Hackney",
+    "Hammersmith and Fulham",
+    "Haringey",
+    "Harrow",
+    "Havering",
+    "Hillingdon",
+    "Hounslow",
+    "Islington",
+    "Kensington and Chelsea",
+    "Kingston upon Thames",
+    "Lambeth",
+    "Lewisham",
+    "Merton",
+    "Newham",
+    "Redbridge",
+    "Richmond upon Thames",
+    "Southwark",
+    "Sutton",
+    "Tower Hamlets",
+    "Waltham Forest",
+    "Wandsworth",
+    "Westminster"
+  ],
+  "room_types": [
+    "Entire home/apt",
+    "Hotel room",
+    "Private room",
+    "Shared room"
+  ],
+  "property_groups": [
+    "apartment",
+    "boat",
+    "guesthouse",
+    "hotel",
+    "house",
+    "other"
+  ],
+  "neighbourhood_coords": {
+    "Barking and Dagenham": {
+      "latitude": 51.5412,
+      "longitude": 0.12476
+    },
+    "Barnet": {
+      "latitude": 51.5936,
+      "longitude": -0.20352
+    },
+    "Bexley": {
+      "latitude": 51.47058,
+      "longitude": 0.13812
+    },
+    "Brent": {
+      "latitude": 51.54975,
+      "longitude": -0.24192
+    },
+    "Bromley": {
+      "latitude": 51.40582,
+      "longitude": 0.01646
+    },
+    "Camden": {
+      "latitude": 51.53396,
+      "longitude": -0.1373
+    },
+    "City of London": {
+      "latitude": 51.51413,
+      "longitude": -0.08994
+    },
+    "Croydon": {
+      "latitude": 51.38247,
+      "longitude": -0.09624
+    },
+    "Ealing": {
+      "latitude": 51.51296,
+      "longitude": -0.29574
+    },
+    "Enfield": {
+      "latitude": 51.63731,
+      "longitude": -0.08099
+    },
+    "Greenwich": {
+      "latitude": 51.48519,
+      "longitude": 0.05031
+    },
+    "Hackney": {
+      "latitude": 51.5453,
+      "longitude": -0.07228
+    },
+    "Hammersmith and Fulham": {
+      "latitude": 51.48976,
+      "longitude": -0.21264
+    },
+    "Haringey": {
+      "latitude": 51.58769,
+      "longitude": -0.09966
+    },
+    "Harrow": {
+      "latitude": 51.58826,
+      "longitude": -0.33972
+    },
+    "Havering": {
+      "latitude": 51.57158,
+      "longitude": 0.19288
+    },
+    "Hillingdon": {
+      "latitude": 51.52254,
+      "longitude": -0.44802
+    },
+    "Hounslow": {
+      "latitude": 51.48032,
+      "longitude": -0.33284
+    },
+    "Islington": {
+      "latitude": 51.54111,
+      "longitude": -0.10913
+    },
+    "Kensington and Chelsea": {
+      "latitude": 51.49538,
+      "longitude": -0.19062
+    },
+    "Kingston upon Thames": {
+      "latitude": 51.40497,
+      "longitude": -0.29176
+    },
+    "Lambeth": {
+      "latitude": 51.46856,
+      "longitude": -0.11855
+    },
+    "Lewisham": {
+      "latitude": 51.45641,
+      "longitude": -0.03135
+    },
+    "Merton": {
+      "latitude": 51.41526,
+      "longitude": -0.19773
+    },
+    "Newham": {
+      "latitude": 51.52536,
+      "longitude": 0.02032
+    },
+    "Redbridge": {
+      "latitude": 51.57348,
+      "longitude": 0.07006
+    },
+    "Richmond upon Thames": {
+      "latitude": 51.45844,
+      "longitude": -0.30031
+    },
+    "Southwark": {
+      "latitude": 51.49252,
+      "longitude": -0.08204
+    },
+    "Sutton": {
+      "latitude": 51.36597,
+      "longitude": -0.18925
+    },
+    "Tower Hamlets": {
+      "latitude": 51.51665,
+      "longitude": -0.04983
+    },
+    "Waltham Forest": {
+      "latitude": 51.57665,
+      "longitude": -0.01087
+    },
+    "Wandsworth": {
+      "latitude": 51.46051,
+      "longitude": -0.17048
+    },
+    "Westminster": {
+      "latitude": 51.51511,
+      "longitude": -0.16213
+    }
+  },
+  "defaults": {
+    "accommodates": 3.0,
+    "bedrooms": 1.0,
+    "beds": 2.0,
+    "bathrooms_num": 1.0,
+    "minimum_nights": 2.0,
+    "availability_365": 256.0,
+    "number_of_reviews": 8.0,
+    "review_scores_rating": 4.82,
+    "host_listings_count": 3.0,
+    "latitude": 51.51322,
+    "longitude": -0.13397,
+    "amenities_count": 33.0,
+    "dist_to_centre_km": 6.250824179416006
+  }
+}

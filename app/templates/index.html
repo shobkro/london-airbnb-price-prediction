@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>London Airbnb Price Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main>
+  <header>
+    <h1>London Airbnb Price Predictor</h1>
+    <p>Estimate the nightly price of a London Airbnb listing. The model was trained on
+      {{ "{:,}".format(metrics.n_train + metrics.n_test) }} Inside Airbnb listings
+      (snapshot {{ metrics.snapshot_date }}).</p>
+  </header>
+
+  {% if price is not none %}
+  <section class="result">
+    <span>Predicted nightly price</span>
+    <strong>£{{ "%.0f"|format(price) }}</strong>
+    <small>Typical error ± £{{ "%.0f"|format(metrics.results[metrics.best_model].mae) }}
+      (mean absolute error on held-out listings)</small>
+  </section>
+  {% endif %}
+  {% if error %}<p class="error">{{ error }}</p>{% endif %}
+
+  <form method="post">
+    <fieldset>
+      <legend>Location and type</legend>
+      <label>Neighbourhood
+        <select name="neighbourhood_cleansed" required>
+          {% for n in meta.neighbourhoods %}
+          <option {% if values.neighbourhood_cleansed == n %}selected{% endif %}>{{ n }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Room type
+        <select name="room_type" required>
+          {% for r in meta.room_types %}
+          <option {% if values.room_type == r %}selected{% endif %}>{{ r }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Property type
+        <select name="property_group" required>
+          {% for p in meta.property_groups %}
+          <option {% if values.property_group == p %}selected{% endif %}>{{ p }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Size</legend>
+      {% for name, label, step in [
+        ("accommodates", "Guests", 1), ("bedrooms", "Bedrooms", 1),
+        ("beds", "Beds", 1), ("bathrooms_num", "Bathrooms", 0.5)] %}
+      <label>{{ label }}
+        <input type="number" name="{{ name }}" min="0" step="{{ step }}"
+               value="{{ values.get(name, meta.defaults[name]|int) }}" required>
+      </label>
+      {% endfor %}
+    </fieldset>
+
+    <fieldset>
+      <legend>Listing details <small>(optional)</small></legend>
+      {% for name, label, step in [
+        ("minimum_nights", "Minimum nights", 1),
+        ("availability_365", "Days available per year", 1),
+        ("number_of_reviews", "Number of reviews", 1),
+        ("review_scores_rating", "Review rating (0-5)", 0.01),
+        ("amenities_count", "Number of amenities", 1)] %}
+      <label>{{ label }}
+        <input type="number" name="{{ name }}" min="0" step="{{ step }}"
+               value="{{ values.get(name, '') }}" placeholder="{{ meta.defaults[name] }}">
+      </label>
+      {% endfor %}
+      <div class="checks">
+        <label><input type="checkbox" name="host_is_superhost" {% if values.host_is_superhost %}checked{% endif %}> Superhost</label>
+        <label><input type="checkbox" name="instant_bookable" {% if values.instant_bookable %}checked{% endif %}> Instant book</label>
+        <label><input type="checkbox" name="is_shared_bath" {% if values.is_shared_bath %}checked{% endif %}> Shared bathroom</label>
+      </div>
+    </fieldset>
+
+    <button type="submit">Predict price</button>
+  </form>
+
+  <footer>
+    Model: {{ metrics.best_model }} · R² {{ "%.2f"|format(metrics.results[metrics.best_model].r2) }} ·
+    Data: <a href="https://insideairbnb.com/">Inside Airbnb</a> (CC BY 4.0)
+  </footer>
+</main>
+</body>
+</html>
