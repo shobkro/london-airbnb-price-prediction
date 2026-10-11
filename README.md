@@ -104,13 +104,13 @@ pytest
 
 ## Results
 
-After training, the scores for each model are saved to `models/metrics.json`.
+After training, the scores for each model are saved to `models/metrics.json`. The scores below are on a held-out 20% test set (11,725 listings, with 46,900 used for training) from the 17 September 2026 Inside Airbnb snapshot. XGBoost performed best: its predictions are about £49 off the real nightly price on average, and it explains about 71% of the variation in prices.
 
 | Model | MAE (£) | RMSE (£) | R² |
 |---|---|---|---|
-| Ridge | _fill in_ | _fill in_ | _fill in_ |
-| Random Forest | _fill in_ | _fill in_ | _fill in_ |
-| XGBoost | _fill in_ | _fill in_ | _fill in_ |
+| Ridge | 61.73 | 111.67 | 0.514 |
+| Random Forest | 51.00 | 90.59 | 0.680 |
+| **XGBoost** | **49.27** | **86.85** | **0.706** |
 
 ## Possible next steps
 
